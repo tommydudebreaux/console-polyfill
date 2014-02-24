@@ -12,4 +12,8 @@
      'table,time,timeEnd,timeStamp,trace,warn').split(',');
   while (prop = properties.pop()) con[prop] = con[prop] || empty;
   while (method = methods.pop()) con[method] = con[method] || dummy;
-})(window.console = window.console || {});
+})(this.console = this.console || {});
+
+if (typeof(window) !== 'undefined') {
+  window.console = this.console;
+}
